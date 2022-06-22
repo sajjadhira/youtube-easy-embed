@@ -13,8 +13,20 @@ Supported Atrributes:
 - `fullscreen` for enable and disable fullscreen. Default value true. Accepting values `true` and `false` . Example - [youtube url="https://www.youtube.com/watch?v=5Eqb_-j3FDA" autoplay="true" height="500" width="650" fullscreen="false"][/youtube]
 */
 
-function youtube_easy_embed_callback($attributes)
+function youtube_easy_embed_callback($atts)
 {
+
+
+    $default = [
+        'url' => '',
+        'autoplay' => 'true',
+        'fullscreen' => 'true',
+        'height' => 500,
+        'width' => 600,
+    ];
+
+    $attributes = shortcode_atts($default, $atts);
+
     if (isset($attributes['url'])) {
         $url = $attributes['url'];
 
@@ -32,11 +44,11 @@ function youtube_easy_embed_callback($attributes)
                 // set video id for embed url
                 $expParms = explode('&', $explodeUrl[1]);
                 $videoId = $expParms[0];
-                $url = 'http://www.youtube.com/embed/' . $videoId;
+                $url = 'https://www.youtube.com/embed/' . $videoId;
             } else {
 
                 // if there is no additional parameter
-                $url = 'http://www.youtube.com/embed/' . $explodeUrl[1];
+                $url = 'https://www.youtube.com/embed/' . $explodeUrl[1];
             }
         }
 
@@ -78,11 +90,11 @@ function youtube_easy_embed_callback($attributes)
         }
 
         // adding time for no embed url cache
-        if (substr_count($url, '?') > 0) {
-            $url .= '&playtime=' . time();
-        } else {
-            $url .= '?playtime=' . time();
-        }
+        // if (substr_count($url, '?') > 0) {
+        //     $url .= '&amp;playtime=' . time();
+        // } else {
+        //     $url .= '?playtime=' . time();
+        // }
 
 
         return sprintf('<iframe src="%s" height="%s" width="%s" frameborder="0" %s></iframe>', $url, $height, $width, $fullscreen);
