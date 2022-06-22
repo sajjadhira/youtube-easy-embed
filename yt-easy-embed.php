@@ -8,7 +8,7 @@ Description: This is a youtube video embed plugin. By using this plugin you can 
 Version: 1.0.0
 Text Domain: yt-easy-embed
 */
-
+defined('ABSPATH') or die();
 define('YT_EASY_EMBED_VERISON', '1.0.0');
 
 // includeing function file

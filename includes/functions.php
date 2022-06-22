@@ -1,6 +1,8 @@
 <?php
 
+
 // add function for shortcode
+
 
 /*
 Supported Atrributes:
@@ -12,6 +14,8 @@ Supported Atrributes:
 - `width` for embeded players width. Example - [youtube url="https://www.youtube.com/watch?v=5Eqb_-j3FDA" autoplay="true" height="500" width="650"][/youtube]
 - `fullscreen` for enable and disable fullscreen. Default value true. Accepting values `true` and `false` . Example - [youtube url="https://www.youtube.com/watch?v=5Eqb_-j3FDA" autoplay="true" height="500" width="650" fullscreen="false"][/youtube]
 */
+
+defined('ABSPATH') or die();
 
 function youtube_easy_embed_callback($atts)
 {
