@@ -1,4 +1,4 @@
-# Youtube Easy Embed
+# Youtube Easy Embed for WordPress
 
 This is a youtube video embed plugin for WordPress. By using this plugin you can easily embed youtube videos to posts. This is a simple and easy plugin for your embed. A good youtube embed shortcode plugin.
 
